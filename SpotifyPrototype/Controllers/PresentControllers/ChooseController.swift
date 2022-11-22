@@ -28,13 +28,14 @@ class ChooseController: BaseController {
         button.titleLabel?.font = R.Fonts.bold(with: 22)
         button.titleLabel?.textColor = R.Colors.white
         button.layer.cornerRadius = 35
+        button.addTarget(self, action: #selector(getNextController), for: .touchUpInside)
         return button
     }()
     
     private let darkModeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.white.withAlphaComponent(0.3)
-        button.setImage(UIImage(named: "DarkMode"), for: .normal)
+        button.setImage(R.Images.Present.darkMode, for: .normal)
         button.layer.cornerRadius = 40
         return button
     }()
@@ -56,7 +57,7 @@ class ChooseController: BaseController {
     private let lightModeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.white.withAlphaComponent(0.3)
-        button.setImage(UIImage(named: "LightMode"), for: .normal)
+        button.setImage(R.Images.Present.lightMode, for: .normal)
         button.layer.cornerRadius = 40
         return button
     }()
@@ -88,6 +89,12 @@ class ChooseController: BaseController {
         label.font = R.Fonts.bold(with: 20)
         return label
     }()
+    
+    @objc func getNextController() {
+        let nextController = RegOrSignController()
+        nextController.modalPresentationStyle = .overCurrentContext
+        self.present(nextController, animated: true)
+    }
 }
 
 extension ChooseController {
@@ -131,7 +138,6 @@ extension ChooseController {
             button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             button.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -15),
         ])
-        
     }
     
     override func configureApperance() {

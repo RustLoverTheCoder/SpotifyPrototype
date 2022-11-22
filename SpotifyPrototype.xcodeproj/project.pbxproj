@@ -19,6 +19,7 @@
 		554B5EA1292D1FF800CCEEF2 /* StartedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5EA0292D1FF800CCEEF2 /* StartedController.swift */; };
 		554B5EA4292D20BB00CCEEF2 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5EA3292D20BB00CCEEF2 /* BaseController.swift */; };
 		554B5EA6292D30FD00CCEEF2 /* ChooseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5EA5292D30FD00CCEEF2 /* ChooseController.swift */; };
+		554B5EAA292D37CE00CCEEF2 /* RegOrSignController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5EA9292D37CE00CCEEF2 /* RegOrSignController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		554B5EA0292D1FF800CCEEF2 /* StartedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedController.swift; sourceTree = "<group>"; };
 		554B5EA3292D20BB00CCEEF2 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		554B5EA5292D30FD00CCEEF2 /* ChooseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseController.swift; sourceTree = "<group>"; };
+		554B5EA9292D37CE00CCEEF2 /* RegOrSignController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegOrSignController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				554B5EA2292D20B000CCEEF2 /* Base */,
-				554B5EA0292D1FF800CCEEF2 /* StartedController.swift */,
-				554B5EA5292D30FD00CCEEF2 /* ChooseController.swift */,
+				554B5EA7292D375000CCEEF2 /* PresentControllers */,
+				554B5EA8292D378700CCEEF2 /* Sign */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +141,23 @@
 				554B5EA3292D20BB00CCEEF2 /* BaseController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		554B5EA7292D375000CCEEF2 /* PresentControllers */ = {
+			isa = PBXGroup;
+			children = (
+				554B5EA0292D1FF800CCEEF2 /* StartedController.swift */,
+				554B5EA5292D30FD00CCEEF2 /* ChooseController.swift */,
+			);
+			path = PresentControllers;
+			sourceTree = "<group>";
+		};
+		554B5EA8292D378700CCEEF2 /* Sign */ = {
+			isa = PBXGroup;
+			children = (
+				554B5EA9292D37CE00CCEEF2 /* RegOrSignController.swift */,
+			);
+			path = Sign;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +236,7 @@
 				554B5E9A292D1F8300CCEEF2 /* UIColor + Ext.swift in Sources */,
 				554B5EA4292D20BB00CCEEF2 /* BaseController.swift in Sources */,
 				554B5E9C292D1F9C00CCEEF2 /* UIView + Ext.swift in Sources */,
+				554B5EAA292D37CE00CCEEF2 /* RegOrSignController.swift in Sources */,
 				554B5E9E292D1FA700CCEEF2 /* Resources.swift in Sources */,
 				554B5E6A292D1BCB00CCEEF2 /* SceneDelegate.swift in Sources */,
 				554B5EA6292D30FD00CCEEF2 /* ChooseController.swift in Sources */,

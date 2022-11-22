@@ -53,6 +53,7 @@ class StartedController: BaseController {
     
     @objc func getNextController() {
         let nextController = ChooseController()
+        nextController.modalTransitionStyle = .crossDissolve
         nextController.modalPresentationStyle = .overCurrentContext
         self.present(nextController, animated: true)
     }

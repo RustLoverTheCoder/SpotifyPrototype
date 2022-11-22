@@ -9,7 +9,8 @@ import UIKit
 
 enum R {
     enum Icons {
-        static let logo = UIImage(named: "SpotifyLogo")
+        static let logo = UIImage(named: "spotifyLogo")
+        static let back = UIImage(named: "back")
     }
     
     enum Colors {
@@ -22,6 +23,14 @@ enum R {
     enum BackgroundImage {
         static let first = UIImage(named: "first")
         static let second = UIImage(named: "second")
+        static let third = UIImage(named: "third")
+    }
+    
+    enum Images {
+        enum Present {
+            static let darkMode = UIImage(named: "darkMode")
+            static let lightMode = UIImage(named: "lightMode")
+        }
     }
     
     enum Text {
@@ -35,6 +44,13 @@ enum R {
             static let darkMode = "Dark Mode"
             static let lightMode = "Light Mode"
             static let chooseMode = "Choose Mode"
+        }
+        
+        enum SignOrReg {
+            static let titleText = "Enjoy Listening To Music"
+            static let textInfo = "Spotify is a proprietary Swedish audio streaming and media services provider"
+            static let register = "Register"
+            static let signIn = "Sign In"
         }
     }
     
