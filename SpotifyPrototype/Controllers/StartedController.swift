@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  StartedController.swift
 //  SpotifyPrototype
 //
 //  Created by aiv on 22.11.2022.
@@ -7,13 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class StartedController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .black
     }
-
-
 }
-

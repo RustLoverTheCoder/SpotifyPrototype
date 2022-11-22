@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		554B5E68292D1BCB00CCEEF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5E67292D1BCB00CCEEF2 /* AppDelegate.swift */; };
 		554B5E6A292D1BCB00CCEEF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5E69292D1BCB00CCEEF2 /* SceneDelegate.swift */; };
-		554B5E6C292D1BCB00CCEEF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5E6B292D1BCB00CCEEF2 /* ViewController.swift */; };
-		554B5E6F292D1BCB00CCEEF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554B5E6D292D1BCB00CCEEF2 /* Main.storyboard */; };
 		554B5E71292D1BCC00CCEEF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554B5E70292D1BCC00CCEEF2 /* Assets.xcassets */; };
 		554B5E74292D1BCC00CCEEF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554B5E72292D1BCC00CCEEF2 /* LaunchScreen.storyboard */; };
+		554B5E96292D1F7000CCEEF2 /* Satoshi-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 554B5E94292D1F7000CCEEF2 /* Satoshi-Bold.otf */; };
+		554B5E97292D1F7000CCEEF2 /* Satoshi-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 554B5E95292D1F7000CCEEF2 /* Satoshi-Regular.otf */; };
+		554B5E9A292D1F8300CCEEF2 /* UIColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5E99292D1F8300CCEEF2 /* UIColor + Ext.swift */; };
+		554B5E9C292D1F9C00CCEEF2 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5E9B292D1F9C00CCEEF2 /* UIView + Ext.swift */; };
+		554B5E9E292D1FA700CCEEF2 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5E9D292D1FA700CCEEF2 /* Resources.swift */; };
+		554B5EA1292D1FF800CCEEF2 /* StartedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5EA0292D1FF800CCEEF2 /* StartedController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		554B5E64292D1BCB00CCEEF2 /* SpotifyPrototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotifyPrototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		554B5E67292D1BCB00CCEEF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		554B5E69292D1BCB00CCEEF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		554B5E6B292D1BCB00CCEEF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		554B5E6E292D1BCB00CCEEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		554B5E70292D1BCC00CCEEF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		554B5E73292D1BCC00CCEEF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		554B5E75292D1BCC00CCEEF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		554B5E94292D1F7000CCEEF2 /* Satoshi-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Bold.otf"; sourceTree = "<group>"; };
+		554B5E95292D1F7000CCEEF2 /* Satoshi-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Regular.otf"; sourceTree = "<group>"; };
+		554B5E99292D1F8300CCEEF2 /* UIColor + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext.swift"; sourceTree = "<group>"; };
+		554B5E9B292D1F9C00CCEEF2 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
+		554B5E9D292D1FA700CCEEF2 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		554B5EA0292D1FF800CCEEF2 /* StartedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartedController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,67 @@
 		554B5E66292D1BCB00CCEEF2 /* SpotifyPrototype */ = {
 			isa = PBXGroup;
 			children = (
-				554B5E67292D1BCB00CCEEF2 /* AppDelegate.swift */,
-				554B5E69292D1BCB00CCEEF2 /* SceneDelegate.swift */,
-				554B5E6B292D1BCB00CCEEF2 /* ViewController.swift */,
-				554B5E6D292D1BCB00CCEEF2 /* Main.storyboard */,
+				554B5E8E292D1E9E00CCEEF2 /* Application */,
+				554B5E9F292D1FE900CCEEF2 /* Controllers */,
+				554B5E92292D1F4200CCEEF2 /* Resources */,
+				554B5E8D292D1E8F00CCEEF2 /* SupportingFiles */,
+			);
+			path = SpotifyPrototype;
+			sourceTree = "<group>";
+		};
+		554B5E8D292D1E8F00CCEEF2 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
 				554B5E70292D1BCC00CCEEF2 /* Assets.xcassets */,
 				554B5E72292D1BCC00CCEEF2 /* LaunchScreen.storyboard */,
 				554B5E75292D1BCC00CCEEF2 /* Info.plist */,
 			);
-			path = SpotifyPrototype;
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		554B5E8E292D1E9E00CCEEF2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				554B5E67292D1BCB00CCEEF2 /* AppDelegate.swift */,
+				554B5E69292D1BCB00CCEEF2 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		554B5E92292D1F4200CCEEF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				554B5E98292D1F7300CCEEF2 /* Extensions */,
+				554B5E93292D1F4B00CCEEF2 /* Fonts */,
+				554B5E9D292D1FA700CCEEF2 /* Resources.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		554B5E93292D1F4B00CCEEF2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				554B5E94292D1F7000CCEEF2 /* Satoshi-Bold.otf */,
+				554B5E95292D1F7000CCEEF2 /* Satoshi-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		554B5E98292D1F7300CCEEF2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				554B5E99292D1F8300CCEEF2 /* UIColor + Ext.swift */,
+				554B5E9B292D1F9C00CCEEF2 /* UIView + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		554B5E9F292D1FE900CCEEF2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				554B5EA0292D1FF800CCEEF2 /* StartedController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +185,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554B5E97292D1F7000CCEEF2 /* Satoshi-Regular.otf in Resources */,
+				554B5E96292D1F7000CCEEF2 /* Satoshi-Bold.otf in Resources */,
 				554B5E74292D1BCC00CCEEF2 /* LaunchScreen.storyboard in Resources */,
 				554B5E71292D1BCC00CCEEF2 /* Assets.xcassets in Resources */,
-				554B5E6F292D1BCB00CCEEF2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +199,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				554B5E6C292D1BCB00CCEEF2 /* ViewController.swift in Sources */,
 				554B5E68292D1BCB00CCEEF2 /* AppDelegate.swift in Sources */,
+				554B5E9A292D1F8300CCEEF2 /* UIColor + Ext.swift in Sources */,
+				554B5E9C292D1F9C00CCEEF2 /* UIView + Ext.swift in Sources */,
+				554B5E9E292D1FA700CCEEF2 /* Resources.swift in Sources */,
 				554B5E6A292D1BCB00CCEEF2 /* SceneDelegate.swift in Sources */,
+				554B5EA1292D1FF800CCEEF2 /* StartedController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		554B5E6D292D1BCB00CCEEF2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				554B5E6E292D1BCB00CCEEF2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		554B5E72292D1BCC00CCEEF2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -289,22 +345,25 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JRA8SJKSWZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpotifyPrototype/Info.plist;
+				INFOPLIST_FILE = SpotifyPrototype/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = aiv..SpotifyPrototype;
+				PRODUCT_BUNDLE_IDENTIFIER = aiv.SpotifyPrototype;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -317,22 +376,25 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = JRA8SJKSWZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpotifyPrototype/Info.plist;
+				INFOPLIST_FILE = SpotifyPrototype/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = aiv..SpotifyPrototype;
+				PRODUCT_BUNDLE_IDENTIFIER = aiv.SpotifyPrototype;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
