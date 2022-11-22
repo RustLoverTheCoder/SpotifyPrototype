@@ -10,7 +10,7 @@ import UIKit
 class ChooseController: BaseController {
     private let backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.image = R.BackgroundImage.first
+        image.image = R.BackgroundImage.second
         image.contentMode = .scaleAspectFill
         return image
     }()
@@ -21,46 +21,90 @@ class ChooseController: BaseController {
         return image
     }()
     
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = R.Text.GetStarted.titleText
-        label.textColor = R.Colors.white
-        label.font = R.Fonts.bold(with: 22)
-        label.textAlignment = .center
-        return label
-    }()
-    
-    private let textInfo: UILabel = {
-        let label = UILabel()
-        label.text = R.Text.GetStarted.textInfo
-        label.textColor = R.Colors.grey
-        label.font = R.Fonts.bold(with: 16)
-        label.textAlignment = .center
-        label.numberOfLines = 0
-        return label
-    }()
-    
     private let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.salt
-        button.setTitle(R.Text.GetStarted.getStarted, for: .normal)
+        button.setTitle(R.Text.Choose.continued, for: .normal)
         button.titleLabel?.font = R.Fonts.bold(with: 22)
         button.titleLabel?.textColor = R.Colors.white
         button.layer.cornerRadius = 35
         return button
     }()
     
-
+    private let darkModeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = R.Colors.white.withAlphaComponent(0.3)
+        button.setImage(UIImage(named: "DarkMode"), for: .normal)
+        button.layer.cornerRadius = 40
+        return button
+    }()
+    
+    private let darkModeText: UILabel = {
+        let label = UILabel()
+        label.text = R.Text.Choose.darkMode
+        label.font = R.Fonts.bold(with: 16)
+        return label
+    }()
+    
+    private let darkModeStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        return stackView
+    }()
+    
+    private let lightModeButton: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = R.Colors.white.withAlphaComponent(0.3)
+        button.setImage(UIImage(named: "LightMode"), for: .normal)
+        button.layer.cornerRadius = 40
+        return button
+    }()
+    
+    private let lightModeText: UILabel = {
+        let label = UILabel()
+        label.text = R.Text.Choose.lightMode
+        label.font = R.Fonts.bold(with: 16)
+        return label
+    }()
+    
+    private let lightModeStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 10
+        return stackView
+    }()
+    
+    private let chooseModeStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 50
+        return stackView
+    }()
+    
+    private let chooseModeText: UILabel = {
+        let label = UILabel()
+        label.text = R.Text.Choose.chooseMode
+        label.font = R.Fonts.bold(with: 20)
+        return label
+    }()
 }
 
 extension ChooseController {
     override func setupViews() {
         super.setupViews()
+        darkModeStackView.addArrangedSubview(darkModeButton)
+        darkModeStackView.addArrangedSubview(darkModeText)
+        lightModeStackView.addArrangedSubview(lightModeButton)
+        lightModeStackView.addArrangedSubview(lightModeText)
+        chooseModeStackView.addArrangedSubview(darkModeStackView)
+        chooseModeStackView.addArrangedSubview(lightModeStackView)
+        
         view.setupView(backgroundImage)
         view.setupView(logo)
-        view.setupView(titleLabel)
-        view.setupView(textInfo)
+        view.setupView(chooseModeStackView)
         view.setupView(button)
+        view.setupView(chooseModeText)
     }
     
     override func constraintViews() {
@@ -74,13 +118,12 @@ extension ChooseController {
             logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            titleLabel.bottomAnchor.constraint(equalTo: textInfo.topAnchor, constant: -15),
+            chooseModeText.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            chooseModeText.bottomAnchor.constraint(equalTo: chooseModeStackView.topAnchor, constant: -30),
             
-            textInfo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textInfo.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 45),
-            textInfo.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -45),
-            textInfo.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -30),
+            chooseModeStackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            chooseModeStackView.bottomAnchor.constraint(equalTo: button.topAnchor, constant: -60),
+            chooseModeStackView.heightAnchor.constraint(equalToConstant: 110),
             
             button.heightAnchor.constraint(equalToConstant: 70),
             button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -93,7 +136,9 @@ extension ChooseController {
     
     override func configureApperance() {
         super.configureApperance()
-        view.backgroundColor = R.Colors.black
+        view.backgroundColor = R.Colors.white
         button.makeSystem(button)
+        darkModeStackView.makeSystem(darkModeButton)
+        lightModeStackView.makeSystem(lightModeButton)
     }
 }

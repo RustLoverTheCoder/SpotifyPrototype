@@ -30,6 +30,12 @@ enum R {
             static let titleText = "Enjoy Listening To Music"
             static let textInfo = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis enim purus sed phasellus. Cursus ornare id scelerisque aliquam."
         }
+        enum Choose {
+            static let continued = "Continue"
+            static let darkMode = "Dark Mode"
+            static let lightMode = "Light Mode"
+            static let chooseMode = "Choose Mode"
+        }
     }
     
     enum Fonts {
