@@ -11,6 +11,8 @@ enum R {
     enum Icons {
         static let logo = UIImage(named: "spotifyLogo")
         static let back = UIImage(named: "back")
+        static let google = UIImage(named: "google")
+        static let apple = UIImage(named: "apple")
     }
     
     enum Colors {
@@ -51,6 +53,15 @@ enum R {
             static let textInfo = "Spotify is a proprietary Swedish audio streaming and media services provider"
             static let register = "Register"
             static let signIn = "Sign In"
+        }
+        
+        enum SignIn {
+            static let signIn = "Sign In"
+            static let username = "Enter Username Or Email"
+            static let password = "Password"
+            static let recovery = "Recovery Password"
+            static let notAMember = "Not A Member?"
+            static let register = "Register"
         }
     }
     

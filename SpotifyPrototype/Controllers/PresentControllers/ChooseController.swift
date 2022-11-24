@@ -8,6 +8,7 @@
 import UIKit
 
 class ChooseController: BaseController {
+    let navigationBar = NavBarController()
     private let backgroundImage: UIImageView = {
         let image = UIImageView()
         image.image = R.BackgroundImage.second

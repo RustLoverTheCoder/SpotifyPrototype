@@ -66,6 +66,7 @@ class RegOrSignController: BaseController {
         button.titleLabel?.font = R.Fonts.bold(with: 22)
         button.titleLabel?.textColor = R.Colors.white
         button.layer.cornerRadius = 35
+        button.addTarget(self, action: #selector(signIn), for: .touchUpInside)
         return button
     }()
     
@@ -93,6 +94,12 @@ class RegOrSignController: BaseController {
     
     @objc func getBack() {
         self.dismiss(animated: true)
+    }
+    
+    @objc func signIn() {
+        let signIn = NavBarController(rootViewController: SignInController())
+        signIn.modalPresentationStyle = .overCurrentContext
+        self.present(signIn, animated: true)
     }
     
 }
@@ -134,7 +141,6 @@ extension RegOrSignController {
             stack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             stack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             
-
             backgroundImage.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             backgroundImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -30)
         ])
