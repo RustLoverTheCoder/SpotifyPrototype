@@ -10,20 +10,20 @@ import UIKit
 class StartedController: BaseController {
     private let backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.image = R.BackgroundImage.first
+        image.image = R.Start.Images.background
         image.contentMode = .scaleAspectFill
         return image
     }()
     
     private let logo: UIImageView = {
         let image = UIImageView()
-        image.image = R.Icons.logo
+        image.image = R.Icons.spotifyLogo
         return image
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.Text.GetStarted.titleText
+        label.text = R.Start.Texts.titleText
         label.textColor = R.Colors.white
         label.font = R.Fonts.bold(with: 22)
         label.textAlignment = .center
@@ -32,7 +32,7 @@ class StartedController: BaseController {
     
     private let textInfo: UILabel = {
         let label = UILabel()
-        label.text = R.Text.GetStarted.textInfo
+        label.text = R.Start.Texts.textInfo
         label.textColor = R.Colors.grey
         label.font = R.Fonts.bold(with: 16)
         label.textAlignment = .center
@@ -43,7 +43,7 @@ class StartedController: BaseController {
     private let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.salt
-        button.setTitle(R.Text.GetStarted.getStarted, for: .normal)
+        button.setTitle(R.Start.Texts.getStarted, for: .normal)
         button.titleLabel?.font = R.Fonts.bold(with: 22)
         button.titleLabel?.textColor = R.Colors.white
         button.layer.cornerRadius = 35
@@ -99,7 +99,7 @@ extension StartedController {
     
     override func configureApperance() {
         super.configureApperance()
-        view.backgroundColor = R.Colors.black
+        view.backgroundColor = R.Colors.background
         button.makeSystem(button)
     }
 }

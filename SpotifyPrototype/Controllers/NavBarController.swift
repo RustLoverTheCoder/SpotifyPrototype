@@ -10,12 +10,10 @@ import UIKit
 final class NavBarController: UINavigationController {
     override func viewDidLoad() {
         super .viewDidLoad()
-        
         configureApperance()
     }
     
     private func configureApperance() {
-        view.backgroundColor = R.Colors.black
-        navigationBar.isTranslucent = false
+        view.backgroundColor = R.Colors.background
     }
 }

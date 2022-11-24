@@ -8,54 +8,61 @@
 import UIKit
 
 enum R {
-    enum Icons {
-        static let logo = UIImage(named: "spotifyLogo")
-        static let back = UIImage(named: "back")
-        static let google = UIImage(named: "google")
-        static let apple = UIImage(named: "apple")
-    }
     
-    enum Colors {
-        static let salt = UIColor(hexString: "#42C83C")
-        static let white = UIColor(hexString: "#DADADA")
-        static let black = UIColor(hexString: "#1C1B1B")
-        static let grey = UIColor(hexString: "#797979")
-    }
-    
-    enum BackgroundImage {
-        static let first = UIImage(named: "first")
-        static let second = UIImage(named: "second")
-        static let third = UIImage(named: "third")
-    }
-    
-    enum Images {
-        enum Present {
-            static let darkMode = UIImage(named: "darkMode")
-            static let lightMode = UIImage(named: "lightMode")
-        }
-    }
-    
-    enum Text {
-        enum GetStarted {
+    //    MARK: Start Controller
+    enum Start {        
+        enum Texts {
             static let getStarted = "Get Started"
             static let titleText = "Enjoy Listening To Music"
             static let textInfo = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis enim purus sed phasellus. Cursus ornare id scelerisque aliquam."
         }
-        enum Choose {
+        
+        enum Images {
+            static let background = UIImage(named: "first")
+        }
+    }
+    
+    //    MARK: Choose Controller
+    enum Choose {
+        enum Icons {
+            static let darkMode = UIImage(named: "darkMode")
+            static let lightMode = UIImage(named: "lightMode")
+        }
+        
+        enum Texts {
             static let continued = "Continue"
             static let darkMode = "Dark Mode"
             static let lightMode = "Light Mode"
             static let chooseMode = "Choose Mode"
         }
         
-        enum SignOrReg {
+        enum Images {
+            static let background = UIImage(named: "second")
+        }
+    }
+    
+    //    MARK: Register or Sign In Controller
+    enum RegOrSig {
+        enum Texts {
             static let titleText = "Enjoy Listening To Music"
             static let textInfo = "Spotify is a proprietary Swedish audio streaming and media services provider"
             static let register = "Register"
             static let signIn = "Sign In"
         }
         
-        enum SignIn {
+        enum Images {
+            static let background = UIImage(named: "third")
+        }
+    }
+    
+    //    MARK: Sign In Controller
+    enum SignIn {
+        enum Icons {
+            static let apple = UIImage(named: "apple")
+            static let google = UIImage(named: "google")
+        }
+    
+        enum Texts {
             static let signIn = "Sign In"
             static let username = "Enter Username Or Email"
             static let password = "Password"
@@ -63,8 +70,39 @@ enum R {
             static let notAMember = "Not A Member?"
             static let register = "Register"
         }
+        
+        enum Images {
+            static let background = UIImage(named: "third")
+        }
     }
     
+    
+    //    MARK: TabBar Controller
+    enum TabBar {
+        enum Icons {
+            static let home = UIImage(named: "home")
+            static let discovery = UIImage(named: "discovery")
+            static let like = UIImage(named: "like")
+            static let profile = UIImage(named: "profile")
+        }
+    }
+    
+    //    MARK: Icons
+    enum Icons {
+        static let spotifyLogo = UIImage(named: "spotifyLogo")
+        static let back = UIImage(named: "back")
+    }
+    
+//    MARK: Colors
+    enum Colors {
+        static let background = UIColor(hexString: "#1C1B1B")
+        static let salt = UIColor(hexString: "#42C83C")
+        static let white = UIColor(hexString: "#DADADA")
+        static let grey = UIColor(hexString: "#797979")
+        static let secondary = UIColor(hexString: "#343434")
+    }
+    
+//    MARK: Fonts
     enum Fonts {
         static func regular(with size: CGFloat) -> UIFont {
             UIFont(name: "Satoshi-Regular", size: size) ?? UIFont()

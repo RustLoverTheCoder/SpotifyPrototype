@@ -22,5 +22,7 @@ class BaseController: UIViewController {
     
     func constraintViews() {}
     
-    func configureApperance() {}
+    func configureApperance() {
+        view.backgroundColor = R.Colors.background
+    }
 }

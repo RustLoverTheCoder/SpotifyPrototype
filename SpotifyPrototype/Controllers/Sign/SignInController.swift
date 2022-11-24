@@ -10,13 +10,13 @@ import UIKit
 class SignInController: BaseController {
     private let logo: UIImageView = {
         let image = UIImageView()
-        image.image = R.Icons.logo
+        image.image = R.Icons.spotifyLogo
         return image
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.Text.SignIn.signIn
+        label.text = R.SignIn.Texts.signIn
         label.textColor = R.Colors.white
         label.font = R.Fonts.bold(with: 24)
         label.textAlignment = .center
@@ -37,7 +37,7 @@ class SignInController: BaseController {
     
     private let recoveryButton: UIButton = {
         let button = UIButton()
-        button.setTitle(R.Text.SignIn.recovery, for: .normal)
+        button.setTitle(R.SignIn.Texts.recovery, for: .normal)
         button.titleLabel?.font = R.Fonts.bold(with: 14)
         button.titleLabel?.textAlignment = .left
         button.setTitleColor(R.Colors.white, for: .normal)
@@ -46,7 +46,7 @@ class SignInController: BaseController {
     
     private let signInButton: UIButton = {
         let button = UIButton()
-        button.setTitle(R.Text.SignIn.signIn, for: .normal)
+        button.setTitle(R.SignIn.Texts.signIn, for: .normal)
         button.titleLabel?.textColor = R.Colors.white
         button.titleLabel?.font = R.Fonts.bold(with: 20)
         button.backgroundColor = R.Colors.salt
@@ -57,12 +57,12 @@ class SignInController: BaseController {
     
     private let googleLogo: UIImageView = {
         let image = UIImageView()
-        image.image = R.Icons.google
+        image.image = R.SignIn.Icons.google
         return image
     }()
     private let appleLogo: UIImageView = {
         let image = UIImageView()
-        image.image = R.Icons.apple
+        image.image = R.SignIn.Icons.apple
         return image
     }()
     
@@ -75,7 +75,7 @@ class SignInController: BaseController {
     
     private let register: UILabel = {
         let label = UILabel()
-        label.text = R.Text.SignIn.notAMember
+        label.text = R.SignIn.Texts.notAMember
         label.textColor = R.Colors.white
         label.font = R.Fonts.bold(with: 14)
         label.textAlignment = .center
@@ -84,7 +84,7 @@ class SignInController: BaseController {
     
     private let registerButton: UIButton = {
         let button = UIButton()
-        button.setTitle(R.Text.SignIn.register, for: .normal)
+        button.setTitle(R.SignIn.Texts.register, for: .normal)
         button.titleLabel?.font = R.Fonts.bold(with: 14)
         button.titleLabel?.textAlignment = .left
         button.setTitleColor(R.Colors.salt, for: .normal)
@@ -112,6 +112,7 @@ class SignInController: BaseController {
     }
     
     @objc func signIn() {
+        /*
         if username.text == "Amal" && password.text == "123" {
             let app = HomeController()
             app.modalPresentationStyle = .overCurrentContext
@@ -119,6 +120,10 @@ class SignInController: BaseController {
         } else {
             alertController()
         }
+         */
+        let tabBar = TabBarController()
+        tabBar.modalPresentationStyle = .overCurrentContext
+        self.present(tabBar, animated: true)
     }
     
     func alertController() {
@@ -159,6 +164,7 @@ extension SignInController {
             titleLabel.bottomAnchor.constraint(equalTo: signInStack.topAnchor, constant: -50),
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
+            signInStack.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             signInStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             signInStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             signInStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
@@ -166,16 +172,12 @@ extension SignInController {
             logoStack.topAnchor.constraint(equalTo: signInStack.bottomAnchor, constant: 40),
             logoStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
+            googleLogo.widthAnchor.constraint(equalToConstant: 35),
+            appleLogo.widthAnchor.constraint(equalToConstant: 30),
+            
             registerStack.topAnchor.constraint(equalTo: logoStack.bottomAnchor, constant: 40),
             registerStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             registerStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30),
-        
-            googleLogo.widthAnchor.constraint(equalToConstant: 35),
-            
-            appleLogo.widthAnchor.constraint(equalToConstant: 30),
-            
-            signInStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signInStack.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -183,7 +185,7 @@ extension SignInController {
         super.configureApperance()
         navigationItem.titleView = logo
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
-        username.placeholder = R.Text.SignIn.username
-        password.placeholder = R.Text.SignIn.password
+        username.placeholder = R.SignIn.Texts.username
+        password.placeholder = R.SignIn.Texts.password
     }
 }

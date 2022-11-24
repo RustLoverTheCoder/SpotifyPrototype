@@ -19,20 +19,20 @@ class RegOrSignController: BaseController {
     
     private let backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.image = R.BackgroundImage.third
+        image.image = R.RegOrSig.Images.background
         image.contentMode = .scaleAspectFill
         return image
     }()
     
     private let logo: UIImageView = {
         let image = UIImageView()
-        image.image = R.Icons.logo
+        image.image = R.Icons.spotifyLogo
         return image
     }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = R.Text.SignOrReg.titleText
+        label.text = R.RegOrSig.Texts.titleText
         label.textColor = R.Colors.white
         label.font = R.Fonts.bold(with: 24)
         label.textAlignment = .center
@@ -41,7 +41,7 @@ class RegOrSignController: BaseController {
     
     private let textInfo: UILabel = {
         let label = UILabel()
-        label.text = R.Text.SignOrReg.textInfo
+        label.text = R.RegOrSig.Texts.textInfo
         label.textColor = R.Colors.grey
         label.font = R.Fonts.bold(with: 16)
         label.textAlignment = .center
@@ -52,7 +52,7 @@ class RegOrSignController: BaseController {
     private let registerButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.salt
-        button.setTitle(R.Text.SignOrReg.register, for: .normal)
+        button.setTitle(R.RegOrSig.Texts.register, for: .normal)
         button.titleLabel?.font = R.Fonts.bold(with: 22)
         button.titleLabel?.textColor = R.Colors.white
         button.layer.cornerRadius = 20
@@ -62,7 +62,7 @@ class RegOrSignController: BaseController {
     private let signInButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.salt.withAlphaComponent(0)
-        button.setTitle(R.Text.SignOrReg.signIn, for: .normal)
+        button.setTitle(R.SignIn.Texts.signIn, for: .normal)
         button.titleLabel?.font = R.Fonts.bold(with: 22)
         button.titleLabel?.textColor = R.Colors.white
         button.layer.cornerRadius = 35
@@ -148,6 +148,6 @@ extension RegOrSignController {
     
     override func configureApperance() {
         super.configureApperance()
-        view.backgroundColor = R.Colors.black
+        view.backgroundColor = R.Colors.background
     }
 }

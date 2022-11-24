@@ -11,21 +11,21 @@ class ChooseController: BaseController {
     let navigationBar = NavBarController()
     private let backgroundImage: UIImageView = {
         let image = UIImageView()
-        image.image = R.BackgroundImage.second
+        image.image = R.Choose.Images.background
         image.contentMode = .scaleAspectFill
         return image
     }()
     
     private let logo: UIImageView = {
         let image = UIImageView()
-        image.image = R.Icons.logo
+        image.image = R.Icons.spotifyLogo
         return image
     }()
     
     private let button: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.salt
-        button.setTitle(R.Text.Choose.continued, for: .normal)
+        button.setTitle(R.Choose.Texts.continued, for: .normal)
         button.titleLabel?.font = R.Fonts.bold(with: 22)
         button.titleLabel?.textColor = R.Colors.white
         button.layer.cornerRadius = 35
@@ -36,14 +36,14 @@ class ChooseController: BaseController {
     private let darkModeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.white.withAlphaComponent(0.3)
-        button.setImage(R.Images.Present.darkMode, for: .normal)
+        button.setImage(R.Choose.Icons.darkMode, for: .normal)
         button.layer.cornerRadius = 40
         return button
     }()
     
     private let darkModeText: UILabel = {
         let label = UILabel()
-        label.text = R.Text.Choose.darkMode
+        label.text = R.Choose.Texts.darkMode
         label.font = R.Fonts.bold(with: 16)
         return label
     }()
@@ -58,14 +58,14 @@ class ChooseController: BaseController {
     private let lightModeButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = R.Colors.white.withAlphaComponent(0.3)
-        button.setImage(R.Images.Present.lightMode, for: .normal)
+        button.setImage(R.Choose.Icons.lightMode, for: .normal)
         button.layer.cornerRadius = 40
         return button
     }()
     
     private let lightModeText: UILabel = {
         let label = UILabel()
-        label.text = R.Text.Choose.lightMode
+        label.text = R.Choose.Texts.lightMode
         label.font = R.Fonts.bold(with: 16)
         return label
     }()
@@ -86,7 +86,7 @@ class ChooseController: BaseController {
     
     private let chooseModeText: UILabel = {
         let label = UILabel()
-        label.text = R.Text.Choose.chooseMode
+        label.text = R.Choose.Texts.chooseMode
         label.font = R.Fonts.bold(with: 20)
         return label
     }()

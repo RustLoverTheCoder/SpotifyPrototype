@@ -24,6 +24,10 @@
 		5558BD4D292F85DF00A4DC87 /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558BD4C292F85DF00A4DC87 /* SignInController.swift */; };
 		5558BD4F292F935C00A4DC87 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558BD4E292F935C00A4DC87 /* BaseTextField.swift */; };
 		5558BD51292FA4E200A4DC87 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5558BD50292FA4E200A4DC87 /* HomeController.swift */; };
+		5559EBA5292FF9F000A060A8 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBA4292FF9F000A060A8 /* TabBarController.swift */; };
+		5559EBA8292FFC9000A060A8 /* DiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBA7292FFC9000A060A8 /* DiscoverController.swift */; };
+		5559EBAA292FFC9800A060A8 /* LikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBA9292FFC9800A060A8 /* LikeController.swift */; };
+		5559EBAC292FFCA000A060A8 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBAB292FFCA000A060A8 /* ProfileController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		5558BD4C292F85DF00A4DC87 /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		5558BD4E292F935C00A4DC87 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		5558BD50292FA4E200A4DC87 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		5559EBA4292FF9F000A060A8 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		5559EBA7292FFC9000A060A8 /* DiscoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverController.swift; sourceTree = "<group>"; };
+		5559EBA9292FFC9800A060A8 /* LikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeController.swift; sourceTree = "<group>"; };
+		5559EBAB292FFCA000A060A8 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +148,10 @@
 				554B5EA2292D20B000CCEEF2 /* Base */,
 				554B5EA7292D375000CCEEF2 /* PresentControllers */,
 				554B5EA8292D378700CCEEF2 /* Sign */,
-				5558BD50292FA4E200A4DC87 /* HomeController.swift */,
+				5559EBA6292FFA4100A060A8 /* Home */,
+				5559EBAD2930094500A060A8 /* Discover */,
+				5559EBAE2930094F00A060A8 /* Like */,
+				5559EBAF2930095500A060A8 /* Profile */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -176,8 +187,41 @@
 			isa = PBXGroup;
 			children = (
 				5558BD4A292F85A500A4DC87 /* NavBarController.swift */,
+				5559EBA4292FF9F000A060A8 /* TabBarController.swift */,
 			);
 			name = Navigation;
+			sourceTree = "<group>";
+		};
+		5559EBA6292FFA4100A060A8 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5558BD50292FA4E200A4DC87 /* HomeController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5559EBAD2930094500A060A8 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				5559EBA7292FFC9000A060A8 /* DiscoverController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		5559EBAE2930094F00A060A8 /* Like */ = {
+			isa = PBXGroup;
+			children = (
+				5559EBA9292FFC9800A060A8 /* LikeController.swift */,
+			);
+			path = Like;
+			sourceTree = "<group>";
+		};
+		5559EBAF2930095500A060A8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5559EBAB292FFCA000A060A8 /* ProfileController.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,14 +301,18 @@
 				554B5EA4292D20BB00CCEEF2 /* BaseController.swift in Sources */,
 				5558BD4B292F85A500A4DC87 /* NavBarController.swift in Sources */,
 				554B5E9C292D1F9C00CCEEF2 /* UIView + Ext.swift in Sources */,
+				5559EBA8292FFC9000A060A8 /* DiscoverController.swift in Sources */,
 				554B5EAA292D37CE00CCEEF2 /* RegOrSignController.swift in Sources */,
 				5558BD51292FA4E200A4DC87 /* HomeController.swift in Sources */,
+				5559EBAA292FFC9800A060A8 /* LikeController.swift in Sources */,
 				5558BD4F292F935C00A4DC87 /* BaseTextField.swift in Sources */,
 				554B5E9E292D1FA700CCEEF2 /* Resources.swift in Sources */,
 				554B5E6A292D1BCB00CCEEF2 /* SceneDelegate.swift in Sources */,
 				554B5EA6292D30FD00CCEEF2 /* ChooseController.swift in Sources */,
+				5559EBA5292FF9F000A060A8 /* TabBarController.swift in Sources */,
 				554B5EA1292D1FF800CCEEF2 /* StartedController.swift in Sources */,
 				5558BD4D292F85DF00A4DC87 /* SignInController.swift in Sources */,
+				5559EBAC292FFCA000A060A8 /* ProfileController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

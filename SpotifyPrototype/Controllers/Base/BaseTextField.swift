@@ -35,7 +35,7 @@ class BaseTextField: UITextField {
 
 extension BaseTextField {
     func configureApperance() {
-        backgroundColor = R.Colors.black
+        backgroundColor = R.Colors.background
         layer.borderWidth = 1
         layer.borderColor = R.Colors.grey.cgColor
         layer.cornerRadius = 20

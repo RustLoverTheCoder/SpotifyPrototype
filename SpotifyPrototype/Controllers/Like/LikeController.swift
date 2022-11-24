@@ -1,5 +1,5 @@
 //
-//  HomeController.swift
+//  LikeController.swift
 //  SpotifyPrototype
 //
 //  Created by aiv on 24.11.2022.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-class HomeController: BaseController {
+class LikeController: BaseController {
 
 }
 
-extension HomeController {
+extension LikeController {
     override func setupViews() {}
     
     override func constraintViews() {}
     
     override func configureApperance() {
-        view.backgroundColor = R.Colors.black
+        view.backgroundColor = R.Colors.background
     }
 }
