@@ -28,6 +28,9 @@
 		5559EBA8292FFC9000A060A8 /* DiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBA7292FFC9000A060A8 /* DiscoverController.swift */; };
 		5559EBAA292FFC9800A060A8 /* LikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBA9292FFC9800A060A8 /* LikeController.swift */; };
 		5559EBAC292FFCA000A060A8 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBAB292FFCA000A060A8 /* ProfileController.swift */; };
+		55C556A029312570002EE74A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5569F29312570002EE74A /* ProfileView.swift */; };
+		55C556A3293125BD002EE74A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C556A2293125BD002EE74A /* BaseView.swift */; };
+		55C556A629313A3B002EE74A /* LikedTracksTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C556A529313A3B002EE74A /* LikedTracksTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		5559EBA7292FFC9000A060A8 /* DiscoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverController.swift; sourceTree = "<group>"; };
 		5559EBA9292FFC9800A060A8 /* LikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeController.swift; sourceTree = "<group>"; };
 		5559EBAB292FFCA000A060A8 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		55C5569F29312570002EE74A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		55C556A2293125BD002EE74A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		55C556A529313A3B002EE74A /* LikedTracksTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTracksTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,7 @@
 			children = (
 				554B5EA3292D20BB00CCEEF2 /* BaseController.swift */,
 				5558BD4E292F935C00A4DC87 /* BaseTextField.swift */,
+				55C556A2293125BD002EE74A /* BaseView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -219,9 +226,27 @@
 		5559EBAF2930095500A060A8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				55C556A129312574002EE74A /* ProfileView */,
+				55C556A429313A20002EE74A /* LikedTracks */,
 				5559EBAB292FFCA000A060A8 /* ProfileController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		55C556A129312574002EE74A /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				55C5569F29312570002EE74A /* ProfileView.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		55C556A429313A20002EE74A /* LikedTracks */ = {
+			isa = PBXGroup;
+			children = (
+				55C556A529313A3B002EE74A /* LikedTracksTVCell.swift */,
+			);
+			path = LikedTracks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,11 +331,14 @@
 				5558BD51292FA4E200A4DC87 /* HomeController.swift in Sources */,
 				5559EBAA292FFC9800A060A8 /* LikeController.swift in Sources */,
 				5558BD4F292F935C00A4DC87 /* BaseTextField.swift in Sources */,
+				55C556A029312570002EE74A /* ProfileView.swift in Sources */,
 				554B5E9E292D1FA700CCEEF2 /* Resources.swift in Sources */,
 				554B5E6A292D1BCB00CCEEF2 /* SceneDelegate.swift in Sources */,
 				554B5EA6292D30FD00CCEEF2 /* ChooseController.swift in Sources */,
 				5559EBA5292FF9F000A060A8 /* TabBarController.swift in Sources */,
 				554B5EA1292D1FF800CCEEF2 /* StartedController.swift in Sources */,
+				55C556A3293125BD002EE74A /* BaseView.swift in Sources */,
+				55C556A629313A3B002EE74A /* LikedTracksTVCell.swift in Sources */,
 				5558BD4D292F85DF00A4DC87 /* SignInController.swift in Sources */,
 				5559EBAC292FFCA000A060A8 /* ProfileController.swift in Sources */,
 			);

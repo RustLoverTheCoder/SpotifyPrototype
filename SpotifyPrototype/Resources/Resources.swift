@@ -86,11 +86,29 @@ enum R {
             static let profile = UIImage(named: "profile")
         }
     }
+//    MARK: Profile
+    enum Profile {
+        enum Texts {
+            static let profile = "Profile"
+            static let email = "email@email.com"
+            static let username = "aiv"
+            static let followes = "Followes"
+            static let followers = "Followers"
+            static let songTitle = "Song Title"
+            static let artist = "Artist"
+            
+        }
+        enum Images {
+            static let avatar = UIImage(named: "avatar")
+        }
+    }
     
     //    MARK: Icons
     enum Icons {
         static let spotifyLogo = UIImage(named: "spotifyLogo")
         static let back = UIImage(named: "back")
+        static let threeDot = UIImage(named: "threeDot")
+        static let threeDotHor = UIImage(named: "threeDotHor")
     }
     
 //    MARK: Colors
