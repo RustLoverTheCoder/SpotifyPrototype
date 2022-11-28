@@ -28,6 +28,8 @@
 		5559EBA8292FFC9000A060A8 /* DiscoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBA7292FFC9000A060A8 /* DiscoverController.swift */; };
 		5559EBAA292FFC9800A060A8 /* LikeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBA9292FFC9800A060A8 /* LikeController.swift */; };
 		5559EBAC292FFCA000A060A8 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5559EBAB292FFCA000A060A8 /* ProfileController.swift */; };
+		55AD679929354F7C000FB039 /* NewAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD679829354F7C000FB039 /* NewAlbumView.swift */; };
+		55AD679C293552BA000FB039 /* SegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD679B293552BA000FB039 /* SegmentedControl.swift */; };
 		55C556A029312570002EE74A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C5569F29312570002EE74A /* ProfileView.swift */; };
 		55C556A3293125BD002EE74A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C556A2293125BD002EE74A /* BaseView.swift */; };
 		55C556A629313A3B002EE74A /* LikedTracksTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C556A529313A3B002EE74A /* LikedTracksTVCell.swift */; };
@@ -57,6 +59,8 @@
 		5559EBA7292FFC9000A060A8 /* DiscoverController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverController.swift; sourceTree = "<group>"; };
 		5559EBA9292FFC9800A060A8 /* LikeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeController.swift; sourceTree = "<group>"; };
 		5559EBAB292FFCA000A060A8 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		55AD679829354F7C000FB039 /* NewAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlbumView.swift; sourceTree = "<group>"; };
+		55AD679B293552BA000FB039 /* SegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControl.swift; sourceTree = "<group>"; };
 		55C5569F29312570002EE74A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		55C556A2293125BD002EE74A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		55C556A529313A3B002EE74A /* LikedTracksTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedTracksTVCell.swift; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 		5559EBA6292FFA4100A060A8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				55AD679A293552A9000FB039 /* View */,
 				5558BD50292FA4E200A4DC87 /* HomeController.swift */,
 			);
 			path = Home;
@@ -231,6 +236,15 @@
 				5559EBAB292FFCA000A060A8 /* ProfileController.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		55AD679A293552A9000FB039 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				55AD679829354F7C000FB039 /* NewAlbumView.swift */,
+				55AD679B293552BA000FB039 /* SegmentedControl.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		55C556A129312574002EE74A /* ProfileView */ = {
@@ -323,10 +337,12 @@
 			files = (
 				554B5E68292D1BCB00CCEEF2 /* AppDelegate.swift in Sources */,
 				554B5E9A292D1F8300CCEEF2 /* UIColor + Ext.swift in Sources */,
+				55AD679C293552BA000FB039 /* SegmentedControl.swift in Sources */,
 				554B5EA4292D20BB00CCEEF2 /* BaseController.swift in Sources */,
 				5558BD4B292F85A500A4DC87 /* NavBarController.swift in Sources */,
 				554B5E9C292D1F9C00CCEEF2 /* UIView + Ext.swift in Sources */,
 				5559EBA8292FFC9000A060A8 /* DiscoverController.swift in Sources */,
+				55AD679929354F7C000FB039 /* NewAlbumView.swift in Sources */,
 				554B5EAA292D37CE00CCEEF2 /* RegOrSignController.swift in Sources */,
 				5558BD51292FA4E200A4DC87 /* HomeController.swift in Sources */,
 				5559EBAA292FFC9800A060A8 /* LikeController.swift in Sources */,
@@ -487,6 +503,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -518,6 +535,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
