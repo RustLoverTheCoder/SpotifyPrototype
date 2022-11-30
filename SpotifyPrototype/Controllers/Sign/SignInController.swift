@@ -8,6 +8,11 @@
 import UIKit
 
 class SignInController: BaseController {
+    private let signInButton = ContinueButton(title: R.SignIn.Texts.signIn, type: .salt)
+    private let backButton = BackButton()
+    private let username = BaseTextField()
+    private let password = BaseTextField()
+    
     private let logo: UIImageView = {
         let image = UIImageView()
         image.image = R.Icons.spotifyLogo
@@ -23,35 +28,12 @@ class SignInController: BaseController {
         return label
     }()
     
-    private let backButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = R.Colors.white.withAlphaComponent(0.1)
-        button.setImage(R.Icons.back, for: .normal)
-        button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(getBack), for: .touchUpInside)
-        return button
-    }()
-    
-    let username = BaseTextField()
-    let password = BaseTextField()
-    
     private let recoveryButton: UIButton = {
         let button = UIButton()
         button.setTitle(R.SignIn.Texts.recovery, for: .normal)
         button.titleLabel?.font = R.Fonts.bold(with: 14)
         button.titleLabel?.textAlignment = .left
         button.setTitleColor(R.Colors.white, for: .normal)
-        return button
-    }()
-    
-    private let signInButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(R.SignIn.Texts.signIn, for: .normal)
-        button.titleLabel?.textColor = R.Colors.white
-        button.titleLabel?.font = R.Fonts.bold(with: 20)
-        button.backgroundColor = R.Colors.salt
-        button.layer.cornerRadius = 20
-        button.addTarget(self, action: #selector(signIn), for: .touchUpInside)
         return button
     }()
     
@@ -156,9 +138,6 @@ extension SignInController {
     override func constraintViews() {
         super.constraintViews()
         NSLayoutConstraint.activate([
-            backButton.heightAnchor.constraint(equalToConstant: 30),
-            backButton.widthAnchor.constraint(equalToConstant: 30),
-            
             logo.widthAnchor.constraint(equalToConstant: 145),
             
             titleLabel.bottomAnchor.constraint(equalTo: signInStack.topAnchor, constant: -50),
@@ -187,5 +166,7 @@ extension SignInController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         username.placeholder = R.SignIn.Texts.username
         password.placeholder = R.SignIn.Texts.password
+        signInButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(getBack), for: .touchUpInside)
     }
 }

@@ -40,16 +40,7 @@ class StartedController: BaseController {
         return label
     }()
     
-    private let button: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = R.Colors.salt
-        button.setTitle(R.Start.Texts.getStarted, for: .normal)
-        button.titleLabel?.font = R.Fonts.bold(with: 22)
-        button.titleLabel?.textColor = R.Colors.white
-        button.layer.cornerRadius = 35
-        button.addTarget(self, action: #selector(getNextController), for: .touchUpInside)
-        return button
-    }()
+    private let button = ContinueButton(title: R.Start.Texts.getStarted, type: .salt)
     
     @objc func getNextController() {
         let nextController = ChooseController()
@@ -100,6 +91,8 @@ extension StartedController {
     override func configureApperance() {
         super.configureApperance()
         view.backgroundColor = R.Colors.background
+        
         button.makeSystem(button)
+        button.addTarget(self, action: #selector(getNextController), for: .touchUpInside)
     }
 }

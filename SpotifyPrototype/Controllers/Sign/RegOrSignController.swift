@@ -8,14 +8,9 @@
 import UIKit
 
 class RegOrSignController: BaseController {
-    private let backButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = R.Colors.white.withAlphaComponent(0.1)
-        button.setImage(R.Icons.back, for: .normal)
-        button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(getBack), for: .touchUpInside)
-        return button
-    }()
+    private let registerButton = ContinueButton(title: R.RegOrSig.Texts.register, type: .salt)
+    private let signInButton = ContinueButton(title: R.RegOrSig.Texts.signIn, type: .clear)
+    private let backButton = BackButton()
     
     private let backgroundImage: UIImageView = {
         let image = UIImageView()
@@ -48,28 +43,7 @@ class RegOrSignController: BaseController {
         label.numberOfLines = 0
         return label
     }()
-    
-    private let registerButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = R.Colors.salt
-        button.setTitle(R.RegOrSig.Texts.register, for: .normal)
-        button.titleLabel?.font = R.Fonts.bold(with: 22)
-        button.titleLabel?.textColor = R.Colors.white
-        button.layer.cornerRadius = 20
-        return button
-    }()
-    
-    private let signInButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = R.Colors.salt.withAlphaComponent(0)
-        button.setTitle(R.SignIn.Texts.signIn, for: .normal)
-        button.titleLabel?.font = R.Fonts.bold(with: 22)
-        button.titleLabel?.textColor = R.Colors.white
-        button.layer.cornerRadius = 35
-        button.addTarget(self, action: #selector(signIn), for: .touchUpInside)
-        return button
-    }()
-    
+ 
     private let textStack: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -92,14 +66,14 @@ class RegOrSignController: BaseController {
         return stackView
     }()
     
-    @objc func getBack() {
-        self.dismiss(animated: true)
-    }
-    
     @objc func signIn() {
         let signIn = NavBarController(rootViewController: SignInController())
         signIn.modalPresentationStyle = .overCurrentContext
         self.present(signIn, animated: true)
+    }
+    
+    @objc func getBack() {
+        self.dismiss(animated: true)
     }
     
 }
@@ -149,5 +123,7 @@ extension RegOrSignController {
     override func configureApperance() {
         super.configureApperance()
         view.backgroundColor = R.Colors.background
+        backButton.addTarget(self, action: #selector(getBack), for: .touchUpInside)
+        signInButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
     }
 }

@@ -22,16 +22,7 @@ class ChooseController: BaseController {
         return image
     }()
     
-    private let button: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = R.Colors.salt
-        button.setTitle(R.Choose.Texts.continued, for: .normal)
-        button.titleLabel?.font = R.Fonts.bold(with: 22)
-        button.titleLabel?.textColor = R.Colors.white
-        button.layer.cornerRadius = 35
-        button.addTarget(self, action: #selector(getNextController), for: .touchUpInside)
-        return button
-    }()
+    private let button = ContinueButton(title: R.Choose.Texts.continued, type: .salt)
     
     private let darkModeButton: UIButton = {
         let button = UIButton()
@@ -145,6 +136,7 @@ extension ChooseController {
         super.configureApperance()
         view.backgroundColor = R.Colors.white
         button.makeSystem(button)
+        button.addTarget(self, action: #selector(getNextController), for: .touchUpInside)
         darkModeStackView.makeSystem(darkModeButton)
         lightModeStackView.makeSystem(lightModeButton)
     }
