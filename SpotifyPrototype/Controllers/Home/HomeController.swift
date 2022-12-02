@@ -26,12 +26,30 @@ class HomeController: BaseController {
         return button
     }()
     
+    private let segmentedControl = SegmentedControl(
+        frame: CGRect(x: 0,
+                      y: 0,
+                      width: 0,
+                      height: 0),
+        buttonTitle: ["Playlists", "Artist", "Video", "Podcasts"])
+    
     private let artistView = NewAlbumView()
+    
+    let layout: UICollectionViewFlowLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: 60, height: 60)
+        return layout
+    }()
+    
+    private let playlists = TestView()
 }
 
 extension HomeController {
     override func setupViews() {
+        view.setupView(segmentedControl)
         view.setupView(artistView)
+        view.setupView(playlists)
     }
     
     override func constraintViews() {
@@ -42,7 +60,19 @@ extension HomeController {
             artistView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             artistView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             artistView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            artistView.heightAnchor.constraint(equalToConstant: 140)
+            artistView.heightAnchor.constraint(equalToConstant: 140),
+            
+            segmentedControl.topAnchor.constraint(equalTo: artistView.bottomAnchor, constant: 30),
+            segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            segmentedControl.heightAnchor.constraint(equalToConstant: 50),
+            
+            playlists.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 15),
+            playlists.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            playlists.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            playlists.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            playlists.heightAnchor.constraint(equalToConstant: 200),
         ])
     }
     
@@ -52,5 +82,18 @@ extension HomeController {
         navigationItem.titleView = logo
         navigationItem.setRightBarButton(UIBarButtonItem(customView: settings), animated: true)
         navigationItem.setLeftBarButton(UIBarButtonItem(customView: search), animated: true)
+        
+        
+    }
+}
+
+extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistViewCell", for: indexPath) as! ArtistViewCell
+        return myCell
     }
 }
