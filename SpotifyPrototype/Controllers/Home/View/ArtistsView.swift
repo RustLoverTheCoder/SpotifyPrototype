@@ -10,13 +10,14 @@ import UIKit
 class ArtistsView: UICollectionView {
     let layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        layout.itemSize = CGSize(width: 60, height: 60)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
+        layout.itemSize = CGSize(width: 147, height: 185)
+        layout.scrollDirection = .vertical
         return layout
     }()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: frame, collectionViewLayout: self.layout)
+        super.init(frame: .zero, collectionViewLayout: self.layout)
         
         configureApperance()
     }

@@ -21,7 +21,7 @@ extension TestView {
     override func setupViews() {
         super.setupViews()
         setupView(scroll)
-        scroll.setupView(collection)
+        scroll.addSubview(collection)
     }
     
     override func constraintViews() {
@@ -34,6 +34,7 @@ extension TestView {
             
             collection.topAnchor.constraint(equalTo: scroll.topAnchor),
             collection.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
+            collection.centerYAnchor.constraint(equalTo: scroll.centerYAnchor),
             collection.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
             collection.trailingAnchor.constraint(equalTo: scroll.trailingAnchor)
         ])
@@ -41,21 +42,16 @@ extension TestView {
     
     override func configureApperance() {
         super.configureApperance()
-        scroll.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height * 2)
-        scroll.center = center
-        scroll.indicatorStyle = .black
-        scroll.layer.borderWidth = 1
-        scroll.layer.borderColor = R.Colors.salt.cgColor
-        scroll.contentSize = CGSize(width: 600, height: 600)
+        scroll.frame = CGRect(x: 0, y: 0, width: self.frame.width * 2, height: self.frame.height)
+        scroll.contentSize = CGSize(width: 650, height: 200)
         scroll.delegate = self
+        scroll.showsVerticalScrollIndicator = false
+        scroll.showsHorizontalScrollIndicator = false
         
         collection.dataSource = self
         collection.delegate = self
         collection.register(ArtistViewCell.self, forCellWithReuseIdentifier: "ArtistViewCell")
         collection.frame.size = scroll.contentSize
-        
-        backgroundColor = .blue
-        
     }
 }
 
@@ -66,7 +62,7 @@ extension TestView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistViewCell", for: indexPath) as! ArtistViewCell
-        myCell.backgroundColor = R.Colors.salt
+        
         return myCell
     }
 }

@@ -131,7 +131,7 @@ enum R {
         static let back = UIImage(named: "back")
         static let threeDot = UIImage(named: "threeDot")
         static let threeDotHor = UIImage(named: "threeDotHor")
-
+        static let play = UIImage(named: "play")
         static let search = UIImage(named: "search")
     }
     

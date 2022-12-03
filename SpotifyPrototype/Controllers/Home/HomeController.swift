@@ -25,6 +25,7 @@ class HomeController: BaseController {
         button.setImage(R.Icons.search , for: .normal)
         return button
     }()
+    private let likedTracks = UITableView(frame: .zero, style: .insetGrouped)
     
     private let segmentedControl = SegmentedControl(
         frame: CGRect(x: 0,
@@ -50,6 +51,7 @@ extension HomeController {
         view.setupView(segmentedControl)
         view.setupView(artistView)
         view.setupView(playlists)
+        view.setupView(likedTracks)
     }
     
     override func constraintViews() {
@@ -70,9 +72,15 @@ extension HomeController {
             
             playlists.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 15),
             playlists.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            playlists.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            playlists.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             playlists.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             playlists.heightAnchor.constraint(equalToConstant: 200),
+            
+            likedTracks.topAnchor.constraint(equalTo: playlists.bottomAnchor),
+            likedTracks.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            likedTracks.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            likedTracks.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            likedTracks.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
     
@@ -82,7 +90,10 @@ extension HomeController {
         navigationItem.titleView = logo
         navigationItem.setRightBarButton(UIBarButtonItem(customView: settings), animated: true)
         navigationItem.setLeftBarButton(UIBarButtonItem(customView: search), animated: true)
-        
+        likedTracks.backgroundColor = R.Colors.background
+        likedTracks.separatorColor = R.Colors.background
+        likedTracks.dataSource = self
+        likedTracks.rowHeight = 65
         
     }
 }
@@ -95,5 +106,15 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let myCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ArtistViewCell", for: indexPath) as! ArtistViewCell
         return myCell
+    }
+}
+
+extension HomeController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return LikedTracksTVCell()
     }
 }
