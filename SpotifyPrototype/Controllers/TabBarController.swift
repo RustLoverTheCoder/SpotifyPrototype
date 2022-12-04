@@ -28,7 +28,7 @@ final class TabBarController: UITabBarController {
     private func configureApperance() {
         tabBar.backgroundColor = R.Colors.secondary
         tabBar.tintColor = R.Colors.salt
-        tabBar.barTintColor = R.Colors.grey
+        
         
         let homeController = HomeController()
         let discoveryController = DiscoverController()

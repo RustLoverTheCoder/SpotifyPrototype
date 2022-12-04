@@ -17,59 +17,47 @@ class ProfileController: BaseController {
         return button
     }()
     
+    private let autoLayout: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        return stack
+    }()
+    
 }
 
 extension ProfileController {
     override func setupViews() {
-        scrollView.addSubview(backView)
-        scrollView.addSubview(likedTracks)
+        autoLayout.addArrangedSubview(backView)
+        autoLayout.addArrangedSubview(likedTracks)
+        scrollView.addSubview(autoLayout)
         view.setupView(scrollView)
-        /*
-        view.setupView(backView)
-        view.setupView(likedTracks)
-         */
     }
     
     override func constraintViews() {
         NSLayoutConstraint.activate([
-            
-            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            scrollView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            /*
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 200),
-            */
-            backView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            backView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            backView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            backView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-            
-            likedTracks.topAnchor.constraint(equalTo: backView.bottomAnchor, constant: 5),
-            likedTracks.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            likedTracks.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            likedTracks.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            likedTracks.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
     }
     
     override func configureApperance() {
-        view.backgroundColor = R.Colors.background
-        backView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
-        backView.layer.cornerRadius = 45
-        likedTracks.backgroundColor = R.Colors.background
-        likedTracks.separatorColor = R.Colors.background
-        
         navigationItem.title = R.Profile.Texts.profile
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settings)
+        
+        backView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        backView.layer.cornerRadius = 45
+        
+        likedTracks.backgroundColor = R.Colors.background
+        likedTracks.separatorColor = R.Colors.background
+        likedTracks.isScrollEnabled = false
         likedTracks.dataSource = self
         likedTracks.rowHeight = 65
-        
-//        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height * 2)
-        scrollView.backgroundColor = R.Colors.white
-        scrollView.showsHorizontalScrollIndicator = true
+
         scrollView.delegate = self
+        scrollView.contentSize = CGSize(width: view.frame.width, height: 1000 )
+        autoLayout.frame.size = scrollView.contentSize
     }
 }
 
@@ -81,8 +69,4 @@ extension ProfileController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return LikedTracksTVCell()
     }
-}
-
-extension ProfileController: UIScrollViewDelegate {
-    
 }
