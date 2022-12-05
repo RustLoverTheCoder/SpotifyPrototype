@@ -94,18 +94,14 @@ class SignInController: BaseController {
     }
     
     @objc func signIn() {
-        /*
-        if username.text == "Amal" && password.text == "123" {
-            let app = HomeController()
-            app.modalPresentationStyle = .overCurrentContext
-            self.present(app, animated: true)
+        
+        if username.text == "aiv" && password.text == "123" {
+            let tabBar = TabBarController()
+            tabBar.modalPresentationStyle = .overCurrentContext
+            self.present(tabBar, animated: true)
         } else {
             alertController()
         }
-         */
-        let tabBar = TabBarController()
-        tabBar.modalPresentationStyle = .overCurrentContext
-        self.present(tabBar, animated: true)
     }
     
     func alertController() {
@@ -147,7 +143,7 @@ extension SignInController {
             signInStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             signInStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             signInStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-
+            
             logoStack.topAnchor.constraint(equalTo: signInStack.bottomAnchor, constant: 40),
             logoStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
@@ -166,6 +162,7 @@ extension SignInController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         username.placeholder = R.SignIn.Texts.username
         password.placeholder = R.SignIn.Texts.password
+        password.isSecureTextEntry = true
         signInButton.addTarget(self, action: #selector(signIn), for: .touchUpInside)
         backButton.addTarget(self, action: #selector(getBack), for: .touchUpInside)
     }
