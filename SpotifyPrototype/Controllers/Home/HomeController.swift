@@ -25,16 +25,15 @@ class HomeController: BaseController {
         button.setImage(R.Icons.search , for: .normal)
         return button
     }()
-    private let likedTracks = UITableView(frame: .zero, style: .insetGrouped)
-    
+    private let artistView = NewAlbumView()
     private let segmentedControl = SegmentedControl(
         frame: CGRect(x: 0,
                       y: 0,
                       width: 0,
                       height: 0),
         buttonTitle: ["Playlists", "Artist", "Video", "Podcasts"])
-    
-    private let artistView = NewAlbumView()
+    private let likedTracks = UITableView(frame: .zero, style: .insetGrouped)
+    private let playlists = PlaylistView()
     
     let layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -43,44 +42,58 @@ class HomeController: BaseController {
         return layout
     }()
     
-    private let playlists = TestView()
+    private let scrollView = UIScrollView()
+    private let autoLayout: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .vertical
+        return stack
+    }()
 }
 
 extension HomeController {
     override func setupViews() {
-        view.setupView(segmentedControl)
-        view.setupView(artistView)
-        view.setupView(playlists)
-        view.setupView(likedTracks)
+        autoLayout.addArrangedSubview(artistView)
+        autoLayout.addArrangedSubview(segmentedControl)
+        autoLayout.addArrangedSubview(playlists)
+        autoLayout.addArrangedSubview(likedTracks)
+        
+        scrollView.addSubview(autoLayout)
+        view.setupView(scrollView)
     }
     
     override func constraintViews() {
         NSLayoutConstraint.activate([
             logo.widthAnchor.constraint(equalToConstant: 145),
             
-            artistView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            artistView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            artistView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            artistView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
             artistView.heightAnchor.constraint(equalToConstant: 140),
+            artistView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            artistView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 30),
+            artistView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            artistView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
             
             segmentedControl.topAnchor.constraint(equalTo: artistView.bottomAnchor, constant: 30),
-            segmentedControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            segmentedControl.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
+            segmentedControl.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            segmentedControl.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -15),
             segmentedControl.heightAnchor.constraint(equalToConstant: 50),
             
-            playlists.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 15),
-            playlists.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            playlists.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            playlists.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            playlists.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 20),
+            playlists.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 15),
+            playlists.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            playlists.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             playlists.heightAnchor.constraint(equalToConstant: 200),
             
             likedTracks.topAnchor.constraint(equalTo: playlists.bottomAnchor),
-            likedTracks.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            likedTracks.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            likedTracks.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            likedTracks.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            likedTracks.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            likedTracks.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            likedTracks.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            likedTracks.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor)
+             
         ])
     }
     
@@ -94,6 +107,9 @@ extension HomeController {
         likedTracks.separatorColor = R.Colors.background
         likedTracks.dataSource = self
         likedTracks.rowHeight = 65
+        likedTracks.isScrollEnabled = false
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 2)
+        autoLayout.frame.size = scrollView.contentSize
         
     }
 }

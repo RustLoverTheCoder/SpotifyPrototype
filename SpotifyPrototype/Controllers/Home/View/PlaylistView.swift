@@ -1,5 +1,5 @@
 //
-//  TestView.swift
+//  PlaylistView.swift
 //  SpotifyPrototype
 //
 //  Created by aiv on 02.12.2022.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TestView: BaseView, UIScrollViewDelegate {
+class PlaylistView: BaseView, UIScrollViewDelegate {
     private let scroll = UIScrollView()
     private let collection = ArtistsView()
     private let image: UIImageView = {
@@ -17,7 +17,7 @@ class TestView: BaseView, UIScrollViewDelegate {
     }()
 }
 
-extension TestView {
+extension PlaylistView {
     override func setupViews() {
         super.setupViews()
         setupView(scroll)
@@ -55,7 +55,7 @@ extension TestView {
     }
 }
 
-extension TestView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension PlaylistView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 4
     }

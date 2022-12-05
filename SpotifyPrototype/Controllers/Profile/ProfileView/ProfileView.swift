@@ -112,7 +112,7 @@ extension ProfileView {
         NSLayoutConstraint.activate([
             avatar.heightAnchor.constraint(equalToConstant: 90),
             avatar.widthAnchor.constraint(equalToConstant: 90),
-            avatar.topAnchor.constraint(equalTo: topAnchor),
+            avatar.topAnchor.constraint(equalTo: topAnchor, constant: 100),
             avatar.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             email.topAnchor.constraint(equalTo: avatar.bottomAnchor, constant: 10),

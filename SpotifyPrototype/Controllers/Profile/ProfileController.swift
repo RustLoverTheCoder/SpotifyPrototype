@@ -39,24 +39,30 @@ extension ProfileController {
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            autoLayout.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -50),
+            autoLayout.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            autoLayout.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            autoLayout.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            
+            backView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: -100)
         ])
     }
     
     override func configureApperance() {
         navigationItem.title = R.Profile.Texts.profile
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settings)
-        
+
         backView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         backView.layer.cornerRadius = 45
-        
+
         likedTracks.backgroundColor = R.Colors.background
         likedTracks.separatorColor = R.Colors.background
         likedTracks.isScrollEnabled = false
         likedTracks.dataSource = self
         likedTracks.rowHeight = 65
 
-        scrollView.delegate = self
-        scrollView.contentSize = CGSize(width: view.frame.width, height: 1000 )
+        scrollView.contentSize = CGSize(width: view.frame.width, height: view.frame.height * 1.9)
         autoLayout.frame.size = scrollView.contentSize
     }
 }
