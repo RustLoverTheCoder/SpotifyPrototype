@@ -11,8 +11,8 @@ class ArtistsView: UICollectionView {
     let layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 15)
-        layout.itemSize = CGSize(width: 147, height: 185)
-        layout.scrollDirection = .vertical
+        layout.itemSize = CGSize(width: 135, height: 165)
+        layout.scrollDirection = .horizontal
         return layout
     }()
     
@@ -27,6 +27,7 @@ class ArtistsView: UICollectionView {
     }
     
     func configureApperance() {
+        showsHorizontalScrollIndicator = false
         backgroundColor = R.Colors.background
     }
 }

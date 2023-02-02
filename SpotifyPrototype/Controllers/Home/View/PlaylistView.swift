@@ -7,9 +7,10 @@
 
 import UIKit
 
-class PlaylistView: BaseView, UIScrollViewDelegate {
-    private let scroll = UIScrollView()
+class PlaylistView: BaseView {
+    
     private let collection = ArtistsView()
+    
     private let image: UIImageView = {
         let image = UIImageView()
         image.image = R.Start.Images.background
@@ -20,38 +21,27 @@ class PlaylistView: BaseView, UIScrollViewDelegate {
 extension PlaylistView {
     override func setupViews() {
         super.setupViews()
-        setupView(scroll)
-        scroll.addSubview(collection)
+        setupView(collection)
     }
     
     override func constraintViews() {
         super.constraintViews()
         NSLayoutConstraint.activate([
-            scroll.topAnchor.constraint(equalTo: topAnchor),
-            scroll.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scroll.trailingAnchor.constraint(equalTo: trailingAnchor),
-            scroll.bottomAnchor.constraint(equalTo: bottomAnchor),
-            
-            collection.topAnchor.constraint(equalTo: scroll.topAnchor),
-            collection.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
-            collection.centerYAnchor.constraint(equalTo: scroll.centerYAnchor),
-            collection.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
-            collection.trailingAnchor.constraint(equalTo: scroll.trailingAnchor)
+            collection.topAnchor.constraint(equalTo: topAnchor),
+            collection.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collection.centerYAnchor.constraint(equalTo: centerYAnchor),
+            collection.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collection.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     
     override func configureApperance() {
         super.configureApperance()
-        scroll.frame = CGRect(x: 0, y: 0, width: self.frame.width * 2, height: self.frame.height)
-        scroll.contentSize = CGSize(width: 650, height: 200)
-        scroll.delegate = self
-        scroll.showsVerticalScrollIndicator = false
-        scroll.showsHorizontalScrollIndicator = false
         
         collection.dataSource = self
         collection.delegate = self
         collection.register(ArtistViewCell.self, forCellWithReuseIdentifier: "ArtistViewCell")
-        collection.frame.size = scroll.contentSize
+        
     }
 }
 
