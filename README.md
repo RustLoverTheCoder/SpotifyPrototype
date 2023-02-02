@@ -7,6 +7,8 @@
 * UITableView 
 * UICollectionView 
 * UIScrollView
+* UIAlertController
+
 
 ## Screenshots
 ![001](https://user-images.githubusercontent.com/116391159/205668439-85dfea92-716f-43f8-901b-39461ff361de.png)
